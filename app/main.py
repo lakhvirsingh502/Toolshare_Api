@@ -6,7 +6,6 @@ from app.models.user import User
 from app.routers.review import router as review_router
 from app.routers.equipment import router as equipment_router
 from app.routers.reservation import router as reservation_router
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title = "ToolShare Api",
