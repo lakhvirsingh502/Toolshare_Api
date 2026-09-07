@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from app.routers.user import router as users_router
-from app.database import Base
-from app.database import engine
+
 from app.models.user import User
 from app.routers.review import router as review_router
 from app.routers.equipment import router as equipment_router
