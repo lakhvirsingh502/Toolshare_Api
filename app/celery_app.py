@@ -2,11 +2,15 @@ from celery import Celery
 import redis
 from datetime import timedelta
 from celery.schedules import crontab
+from dotenv import load_dotenv
+import os
+load_dotenv()
+REDIS_URL = os.getenv("REDIS_URL")
 
 celery_app = Celery(
     "app", 
-    broker = "redis://localhost:6379/0",
-    backend = "redis://localhost:6379/0",
+    broker = REDIS_URL,
+    backend = REDIS_URL,
     include=["app.tasks"]
 )
 celery_app.conf.timezone ="America/Toronto"
