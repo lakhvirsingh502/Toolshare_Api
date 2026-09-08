@@ -11,11 +11,7 @@ app = FastAPI(
     version = "1.0.0"
 
 )
-@app.get("/")
-def home():
-    return{
-        "message":"Hello World!"
-    }
+
 
 app.include_router(users_router)
 app.include_router(equipment_router)
